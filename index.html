@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="description" content="KingsDistrict® — sélection streetwear, sneakers et accessoires au Togo.">
+  <title>KingsDistrict® — Streetwear & Sneakers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">KINGSDISTRICT® — LIVRAISON AU TOGO · PAIEMENT À LA LIVRAISON</div>
+  <header class="site-header">
+    <a class="logo" href="#accueil" aria-label="KingsDistrict accueil">KINGS<span>DISTRICT</span><sup>®</sup></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">☰</button>
+    <nav id="mainNav">
+      <a href="#accueil">Accueil</a><a href="#boutique">Boutique</a><a href="#categories">Catégories</a><a href="#apropos">À propos</a>
+    </nav>
+    <div class="header-actions"><button class="admin-trigger" id="adminOpen">ADMIN</button><button class="cart-trigger" id="cartOpen">PANIER <span id="cartCount">0</span></button></div>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="hero-copy">
+        <p class="eyebrow">THE STREETWEAR DESTINATION</p>
+        <h1>OWN YOUR<br><span>STYLE.</span></h1>
+        <p class="hero-text">Sneakers, vêtements et pièces streetwear soigneusement sélectionnés.</p>
+        <a class="button button-light" href="#boutique">DÉCOUVRIR LA COLLECTION <span>↗</span></a>
+      </div>
+      <div class="hero-art" aria-label="Visuel décoratif KingsDistrict">
+        <div class="hero-ring"></div><div class="hero-word">KD<span>®</span></div><p>EST. 2026 · TOGO</p>
+      </div>
+      <div class="hero-bottom"><span>01 / NEW SEASON</span><span>LOMÉ · TOGO</span></div>
+    </section>
+
+    <section class="category-strip" id="categories">
+      <div><span class="eyebrow">EXPLORE BY CATEGORY</span><h2>CHOISIS TON UNIVERS.</h2></div>
+      <div class="category-links">
+        <button data-category="Crocs">CROCS ↗</button><button data-category="Yeezy Slide">YEEZY SLIDE ↗</button><button data-category="BAPE Slide">BAPE SLIDE ↗</button><button data-category="BAPE Shark Full Zip Hoodie">HOODIES ↗</button><button data-category="BAPE T-shirts">T-SHIRTS ↗</button><button data-category="PSD Boxers">ACCESSOIRES ↗</button>
+      </div>
+    </section>
+
+    <section class="shop-section" id="boutique">
+      <div class="section-heading"><div><p class="eyebrow">THE KD SELECTION</p><h2>LA BOUTIQUE</h2></div><p class="muted">Une sélection. Ton identité.</p></div>
+      <div class="shop-controls">
+        <div class="filters" id="filters"><button class="filter active" data-filter="Tous">TOUT</button><button class="filter" data-filter="Crocs">CROCS</button><button class="filter" data-filter="Yeezy Slide">YEEZY</button><button class="filter" data-filter="BAPE Slide">BAPE SLIDE</button><button class="filter" data-filter="BAPE Shark Full Zip Hoodie">HOODIES</button><button class="filter" data-filter="BAPE T-shirts">T-SHIRTS</button><button class="filter" data-filter="PSD Boxers">PSD</button></div>
+        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Rechercher un produit…"></label>
+      </div>
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+    </section>
+
+    <section class="preorder-banner"><div><p class="eyebrow">MADE TO ORDER</p><h2>UNE PIÈCE À PART.<br>UN STYLE À TOI.</h2><p>Certains articles sont disponibles en précommande. Le délai estimatif est indiqué sur chaque fiche produit.</p><a href="#boutique" class="button button-dark">VOIR LES ARTICLES <span>↗</span></a></div><div class="banner-mark">KD<br><small>SELECTED</small></div></section>
+
+    <section class="about-section" id="apropos"><p class="eyebrow">MORE THAN A STORE</p><h2>BUILT FOR<br><span>YOUR DISTRICT.</span></h2><p>KingsDistrict® rassemble des pièces streetwear, sneakers et essentiels sélectionnés pour affirmer ton style. Basée sur une expérience simple : choisir, commander et payer à la livraison au Togo.</p></section>
+  </main>
+
+  <footer><a class="logo footer-logo" href="#accueil">KINGS<span>DISTRICT</span><sup>®</sup></a><p>© 2026 KingsDistrict®. Tous droits réservés.</p><a href="#accueil">RETOUR EN HAUT ↑</a></footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Panier">
+    <div class="drawer-head"><h2>TON PANIER</h2><button id="cartClose" aria-label="Fermer">✕</button></div>
+    <div id="cartItems" class="cart-items"><p class="empty-cart">Ton panier est vide pour le moment.</p></div>
+    <div class="cart-footer"><div class="cart-total"><span>Total estimatif</span><strong id="cartTotal">À confirmer</strong></div><p>Le prix final sera confirmé avant validation de la commande.</p><button class="button button-dark full" id="checkoutOpen">PASSER COMMANDE</button></div>
+  </aside>
+
+  <div class="modal" id="productModal" role="dialog" aria-modal="true" aria-label="Détail du produit"><button class="modal-close" data-close="productModal">✕</button><div id="productDetail"></div></div>
+  <div class="modal checkout-modal" id="checkoutModal" role="dialog" aria-modal="true" aria-label="Finaliser la commande"><button class="modal-close" data-close="checkoutModal">✕</button><p class="eyebrow">CASH ON DELIVERY</p><h2>FINALISER TA COMMANDE</h2><p class="muted">Paiement à la livraison · Togo uniquement</p>
+    <form id="checkoutForm"><div class="form-grid"><label>Nom et prénom<input name="customer_name" required placeholder="Ton nom complet"></label><label>Téléphone / WhatsApp<input name="phone" type="tel" required placeholder="+228 …"></label><label>Ville / quartier<input name="town" required placeholder="Ex. Lomé, Agoè"></label><label>Adresse de livraison<input name="address" required placeholder="Quartier, rue, repère"></label></div><label>Note complémentaire (facultatif)<textarea name="note" rows="3" placeholder="Précisions pour la livraison…"></textarea></label><div class="checkout-summary" id="checkoutSummary"></div><button class="button button-dark full" type="submit">ENVOYER MA DEMANDE DE COMMANDE</button><p class="form-note">Cette version de démonstration n'envoie pas encore la commande à un serveur. Les commandes seront connectées à la base de données lors de la prochaine étape.</p></form>
+  </div>
+  <div class="admin-panel" id="adminPanel" aria-label="Administration KingsDistrict"><div class="admin-wrap"><div class="admin-top"><div><p class="eyebrow">KINGSDISTRICT® · GESTION</p><h2>ESPACE ADMINISTRATION</h2></div><button id="adminClose">FERMER ✕</button></div><p class="admin-note"><strong>Mode démonstration local :</strong> les modifications sont enregistrées dans ce navigateur uniquement. Cet espace n’est pas encore protégé par une authentification serveur. Ne l’utilise pas comme administration publique en production.</p><div class="admin-box"><h3 id="adminFormTitle">Ajouter un produit</h3><form id="adminProductForm"><input type="hidden" name="id"><div class="admin-grid"><label class="admin-field">Nom du produit<input name="name" required></label><label class="admin-field">Catégorie<select name="category"><option>Crocs</option><option>Yeezy Slide</option><option>BAPE Slide</option><option>BAPE Shark Full Zip Hoodie</option><option>Hoodies</option><option>BAPE T-shirts</option><option>PSD Boxers</option></select></label><label class="admin-field">Prix (FCFA)<input name="price" type="number" min="0" placeholder="Laisser vide si à confirmer"></label><label class="admin-field">Disponibilité<select name="status"><option value="À confirmer">À confirmer</option><option value="En stock">En stock</option><option value="Précommande">Précommande</option><option value="Indisponible">Indisponible</option></select></label><label class="admin-field">Délai précommande (jours, minimum 45)<input name="lead" type="number" min="45" value="45"></label><label class="admin-field">Couleurs (séparées par des virgules)<input name="colors" placeholder="Black, White"></label><label class="admin-field">Tailles (séparées par des virgules)<input name="sizes" placeholder="S, M, L, XL"></label><label class="admin-field">Visibilité<select name="visible"><option value="true">Visible sur la boutique</option><option value="false">Masqué</option></select></label></div><label class="admin-field" style="margin-top:12px">Description<textarea name="description" rows="3"></textarea></label><label class="admin-field" style="margin-top:12px">Photos du produit<input name="photos" id="adminPhotos" type="file" accept="image/*" multiple><span class="admin-note">Photos stockées localement dans ce navigateur. Pour la version en ligne, elles seront migrées vers un stockage cloud.</span></label><div class="admin-image-preview" id="adminImagePreview"></div><div class="admin-form-actions"><button class="primary" type="submit">ENREGISTRER LE PRODUIT</button><button type="button" id="adminReset">NOUVEAU PRODUIT</button></div></form></div><div class="admin-box"><div class="admin-top"><h3>Catalogue produits</h3><div class="admin-actions"><button id="exportCatalog">EXPORTER JSON</button><button id="importCatalogBtn">IMPORTER JSON</button><input type="file" id="importCatalog" accept="application/json" hidden></div></div><div id="adminProductList"></div></div></div></div>
+  <script src="app.js"></script>
+</body>
+</html>
